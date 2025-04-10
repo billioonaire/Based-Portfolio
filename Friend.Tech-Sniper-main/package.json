@@ -1,0 +1,31 @@
+{
+  "name": "friend.tech-sniper",
+  "version": "1.0.0",
+  "description": "Friend.Tech Sniper",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Unchained-Kitchen/Friend.Tech-Sniper.git"
+  },
+  "author": "Unchained",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Unchained-Kitchen/Friend.Tech-Sniper/issues"
+  },
+  "homepage": "https://github.com/Unchained-Kitchen/Friend.Tech-Sniper#readme",
+  "dependencies": {
+    "axios": "^1.5.0",
+    "axios-https-proxy-fix": "^0.17.1",
+    "cheerio": "^1.0.0-rc.12",
+    "crypto-js": "^4.1.1",
+    "discord.js": "^14.13.0",
+    "dotenv": "^16.3.1",
+    "ethers": "^5.7.1",
+    "mongoose": "^7.5.1",
+    "puppeteer": "^21.2.1",
+    "twit": "^2.2.11"
+  }
+}

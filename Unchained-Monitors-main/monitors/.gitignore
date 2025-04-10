@@ -1,0 +1,7 @@
+.env
+node_modules/
+openSeaAPIKeys.txt
+proxies.txt
+etherscanAPIKeys.txt
+identifiers.js
+userData.json

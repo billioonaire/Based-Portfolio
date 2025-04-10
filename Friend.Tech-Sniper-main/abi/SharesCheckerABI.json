@@ -1,0 +1,44 @@
+[
+	{
+		"inputs": [],
+		"stateMutability": "nonpayable",
+		"type": "constructor"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "traderAddress",
+				"type": "address"
+			},
+			{
+				"internalType": "address",
+				"name": "subjectAddress",
+				"type": "address"
+			}
+		],
+		"name": "ownsShares",
+		"outputs": [
+			{
+				"internalType": "bool",
+				"name": "",
+				"type": "bool"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "sharesContract",
+		"outputs": [
+			{
+				"internalType": "contract IFriendtechSharesV1",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	}
+]

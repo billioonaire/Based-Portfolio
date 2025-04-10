@@ -1,0 +1,28 @@
+{
+  "name": "unchained",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@solana/web3.js": "^1.87.6",
+    "axios": "^1.6.3",
+    "bnc-sdk": "^4.6.7",
+    "cheerio": "^1.0.0-rc.12",
+    "crypto-js": "^4.1.1",
+    "discord.js": "^14.14.1",
+    "dotenv": "^16.3.1",
+    "ethers": "^5.7.2",
+    "node-fetch": "^3.3.2",
+    "twit": "^2.2.11",
+    "web3": "^4.3.0",
+    "whois-json": "^2.0.4",
+    "ws": "^8.14.2",
+    "xmldom": "^0.6.0",
+    "xpath": "^0.0.33"
+  }
+}
