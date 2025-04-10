@@ -7,10 +7,10 @@ This repository contains two main projects and their associated smart contracts 
 ### 1. Unchained Monitors
 A comprehensive blockchain monitoring system that provides real-time tracking and analysis of blockchain activities. The project includes:
 - Real-time transaction monitoring
+- User Settings for personalization
 - Custom alert systems
 - Discord integration for notifications
 - Proxy management for reliable connections
-- Advanced data analysis and visualization
 - Configurable monitoring parameters
 
 ### 2. Friend.Tech Sniper
@@ -62,57 +62,6 @@ A utility contract for executing transactions:
 - ETH management
 - Security controls
 - Transaction execution verification
-
-## Technical Details
-
-### Dependencies
-Both projects utilize:
-- Node.js
-- Ethers.js for blockchain interaction
-- Discord.js for bot integration
-- Various blockchain monitoring libraries
-
-### Security Features
-- Access control mechanisms
-- Rate limiting
-- Transaction verification
-- Secure key management
-- Proxy support for reliability
-
-### Configuration
-Both projects use:
-- Environment variables for sensitive data
-- JSON configuration files
-- Customizable monitoring parameters
-- User-specific settings
-
-## Setup and Installation
-
-1. Clone the repository
-2. Install dependencies:
-```bash
-npm install
-```
-3. Configure environment variables
-4. Set up Discord bot tokens
-5. Configure monitoring parameters
-6. Deploy smart contracts (if needed)
-
-## Usage
-
-### Unchained Monitors
-1. Start the monitoring system:
-```bash
-node index.js
-```
-
-### Friend.Tech Sniper
-1. Configure trading parameters
-2. Set up API keys and wallet information
-3. Start the bot:
-```bash
-node index.js
-```
 
 ## License
 
