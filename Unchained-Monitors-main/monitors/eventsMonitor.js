@@ -2,36 +2,32 @@
 const monitorFunctions = require("../monitorFunctions.js");
 
 const { ethers, providers, Contract } = require('ethers');
-const provider = new providers.JsonRpcProvider('https://mainnet.infura.io/v3/95e25f8fb21f4077a0c8989f327a11da'); // don't use websocket for this connection, not working with websockets on infura
+const provider = new providers.JsonRpcProvider('YOUR_ETH_NODE_URL'); // don't use websocket for this connection, not working with websockets on infura
 
 const axios = require('axios');
 
 const ERC20_ABI = require("../abi/ERC20.json");
 const UNISWAPV2POOL_ABI = require("../abi/UniswapV2Pool.json");
 const WETH_ADDRESS = "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2";
-const ETHERSCAN_API_KEY = 'PZ4WBTF5NB2VYIY11BZ6I2UKCZXYERZQ8W'; // Replace with your Etherscan API key
+const ETHERSCAN_API_KEY = 'YOUR_ETHERSCAN_API_KEY';
 
 const fs = require('fs');
-const cacheFilePath = 'data\lp-tokens.json';
+const cacheFilePath = 'data/lp-tokens.json';
 
-let currentKeyIndex = 0;
 let apiKeys = [];
 
-
-
 function loadApiKeys(filePath) {
-    apiKeys = fs.readFileSync(filePath, 'utf8').split('\n').filter(Boolean);
+    // API keys should be loaded from environment variables or secure storage
+    apiKeys = ['YOUR_API_KEY'];
 }
-loadApiKeys("./data/etherscanAPI.txt");
+
 function getRotatingApiKey() {
     if (apiKeys.length === 0) {
-        loadApiKeys(filePath); // Reload the keys from the file
+        loadApiKeys();
     }
-
-    const apiKey = apiKeys[currentKeyIndex];
-    currentKeyIndex = (currentKeyIndex + 1) % apiKeys.length;
-    return apiKey;
+    return apiKeys[0];
 }
+
 // Function to read cache
 async function readCache() {
     if (!fs.existsSync(cacheFilePath)) {
@@ -76,6 +72,7 @@ async function fetchLogsByTopics(fromBlock, toBlock, topics) {
     }
 }
 
+const UNCHAINED_EVENTS = 'YOUR_DISCORD_WEBHOOK_URL';
 
 async function startEventsMonitor(discordClient) {
     console.log("Starting Event Monitor");

@@ -2,7 +2,9 @@
 const monitorFunctions = require("../monitorFunctions.js");
 
 const { ethers, providers, Contract } = require('ethers');
-const provider = new providers.JsonRpcProvider('https://mainnet.infura.io/v3/4798af18ca8244b78f03456b5d69823d'); // e.g., Infura, Alchemy, or a local node
+const provider = new providers.JsonRpcProvider('YOUR_ETH_NODE_URL');
+
+const UNCHAINED_ETH_DEPLOY = 'YOUR_DISCORD_WEBHOOK_URL';
 
 // Function to monitor new contract deployments
 async function startContractDeployMonitor(discordClient) {
@@ -28,6 +30,11 @@ async function startContractDeployMonitor(discordClient) {
       }
     }
   });
+}
+
+async function sendContractDeployEmbed(data) {
+    const UNCHAINED_CONTRACT_DEPLOY = 'YOUR_DISCORD_WEBHOOK_URL';
+    // ... existing code ...
 }
 
 module.exports = {

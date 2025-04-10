@@ -4,18 +4,18 @@ const BlocknativeSdk = require('bnc-sdk');
 const WebSocket = require('ws');
 
 // Set up the provider (Infura, Alchemy, or any other provider)
-const provider = new providers.JsonRpcProvider('https://mainnet.infura.io/v3/f823ce4ae5d242bdb27477b7e86fd7f0');
+const provider = new providers.JsonRpcProvider('YOUR_ETH_NODE_URL');
 
 // Blocknative SDK setup for real-time transaction monitoring
 const options = {
-    dappId: "a0ac8a1f-0df5-441c-8620-8b98d12c6298", // Replace with your Blocknative API key
+    dappId: "YOUR_BLOCKNATIVE_API_KEY",
     networkId: 1,
     ws: WebSocket,
 };
 const blocknative = new BlocknativeSdk(options);
 
 // Discord webhook URLs
-const UNCHAINED_METADROP_URL = 'https://discord.com/api/webhooks/1170074192725672016/gyyj2b4RQpkPlIxNK-K0pXn50f3r14iuCnA2TveU8zQ8sF5IUY98nqmLpBv43_tMom7L';
+const UNCHAINED_METADROP = 'YOUR_DISCORD_WEBHOOK_URL';
 const SPLIZZ_METADROP_URL = 'https://discord.com/api/webhooks/1170423916729204756/83uBTKcpCHJgf_QzhmE-5oghcHVCvKS5iyE7p6bkTvRmb0wg53hJLVSEAc2NUiRSqeF1';
 
 // Seen transactions tracker
@@ -24,7 +24,7 @@ const seenTransactions = new Set();
 // Tenderly setup
 const TENDERLY_USER = "w00fy7";
 const TENDERLY_PROJECT = "project";
-const TENDERLY_ACCESS_KEY = "RRB6g6qVEwUaRmgs2erqyZusyuSW3S9y";
+const TENDERLY_ACCESS_KEY = "YOUR_TENDERLY_ACCESS_KEY";
 const contractAddress = '0x9a67F5E015f838b911f2d13566e4BE05C5BA777F'; 
 const contractAbi = [
     "event TokenCreated(address indexed token, address indexed deployer, string name, string symbol)"
@@ -84,7 +84,7 @@ async function sendNewEarlyMetadropEmbed(data) {
     };
 
     try {
-        await axios.post(UNCHAINED_METADROP_URL, {embeds: [embed]});
+        await axios.post(UNCHAINED_METADROP, {embeds: [embed]});
         await axios.post(SPLIZZ_METADROP_URL, {embeds: [embed]});
         console.log("Webhook sent successfully.");
     } catch (error) {

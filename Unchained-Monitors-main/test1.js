@@ -24,7 +24,7 @@ const uniswapRouterAbi = [
 async function isTokenLive(senderAddress, tokenContractAddress, ethAmount) {
     const TENDERLY_USER = "w00fy7";
     const TENDERLY_PROJECT = "project";
-    const TENDERLY_ACCESS_KEY = "RRB6g6qVEwUaRmgs2erqyZusyuSW3S9y";
+    const TENDERLY_ACCESS_KEY = "YOUR_TENDERLY_ACCESS_KEY";
 
     const provider = new ethers.providers.JsonRpcProvider('https://mainnet.infura.io/v3/YOUR_INFURA_API_KEY');
     const uniswapRouterContract = new ethers.Contract(UNISWAP_ROUTER_ADDRESS, uniswapRouterAbi, provider);

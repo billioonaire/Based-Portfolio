@@ -20,7 +20,7 @@ let BASE_API_KEY2 = '4NEQ51R9NMGH8DTK36RYI57DNEZ8V28P3V';
 
 const { ethers, providers, Contract } = require('ethers');
 
-const provider = new providers.JsonRpcProvider(''); // e.g., Infura, Alchemy, or a local node
+const provider = new providers.JsonRpcProvider('YOUR_ETH_NODE_URL');
 const baseProvider = new providers.JsonRpcProvider(''); // e.g., Infura, Alchemy, or a local node
 
 const ERC20_ABI = [

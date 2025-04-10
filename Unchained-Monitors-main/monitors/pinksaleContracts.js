@@ -2,16 +2,17 @@
 const monitorFunctions = require("../monitorFunctions.js");
 
 const { ethers, providers, Contract } = require('ethers');
-const provider = new providers.JsonRpcProvider('https://mainnet.infura.io/v3/4798af18ca8244b78f03456b5d69823d'); // e.g., Infura, Alchemy, or a local node
+const provider = new providers.JsonRpcProvider('YOUR_ETH_NODE_URL'); // e.g., Infura, Alchemy, or a local node
 
 const axios = require('axios');
 
 const API_URL = 'https://api.pinksale.finance/api/v1/pool/list?page=1&filterBy=inprogress&sortBy=hardcap&limit=40&chainId=1&poolTypes[]=presale&poolTypes[]=fairlaunch';
 let lastSales = [];
 
+const UNCHAINED_PINKSALE = 'YOUR_DISCORD_WEBHOOK_URL';
+const NUN_PINKSALE = 'YOUR_DISCORD_WEBHOOK_URL';
+
 async function sendNewSaleEmbed(data) {
-    const UNCHAINED_PINKSALE = 'https://discord.com/api/webhooks/1170204837376434256/kRbMCjzaYoT4TfLC8T2j0Z0Tune0rbMnc3PbCeACrGGBinn3uxzvONXpvVwZsJJLcG17';
-    const NUN_PINKSALE = 'https://discord.com/api/webhooks/1194771766959157330/wRSUsEuu-G30-uJAQenFss7NW9sa15FqW1inJd3Dz2oiC7vHEzoZYljy6fJYBIPIcF78'
     const formatAddress = (address) => {
         return `${address.substring(0, 6)}...${address.substring(address.length - 4)}`;
     };

@@ -3,7 +3,7 @@ const fs = require('fs');
 const tokenContractAddress = '0x6982508145454ce325ddbe47a25d4ec3d2311933'; // Replace with the token contract address
 let currentKeyIndex = 0;
 let apiKeys = [];
-const cacheFilePath = 'data\lp-tokens.json';
+const cacheFilePath = 'data/lp-tokens.json';
 
 async function readCache() {
   if (!fs.existsSync(cacheFilePath)) {
@@ -14,18 +14,17 @@ async function readCache() {
 }
 
 function loadApiKeys(filePath) {
-    apiKeys = fs.readFileSync(filePath, 'utf8').split('\n').filter(Boolean);
+    // API keys should be loaded from environment variables or secure storage
+    apiKeys = ['YOUR_API_KEY'];
 }
-loadApiKeys("./data/etherscanAPI.txt");
+
 function getRotatingApiKey() {
     if (apiKeys.length === 0) {
-        loadApiKeys(filePath); // Reload the keys from the file
+        loadApiKeys();
     }
-
-    const apiKey = apiKeys[currentKeyIndex];
-    currentKeyIndex = (currentKeyIndex + 1) % apiKeys.length;
-    return apiKey;
+    return apiKeys[0];
 }
+
 async function parseTransferEventData(logs) {
   let poolAddress = '';
   let recipients = new Map(); // Using a Map to track address and accumulated amount
@@ -59,6 +58,7 @@ async function parseTransferEventData(logs) {
       console.log('No liquidity pool address found in the given logs.');
   }
 }
+
 async function isUniswapLiquidityPool(contractAddress) {
   const apiKey = getRotatingApiKey(); // Use rotating API key
   let cache = await readCache();
@@ -94,8 +94,6 @@ async function isUniswapLiquidityPool(contractAddress) {
       return false;
   }
 }
-
-
 
 async function getAndParseTransferEvents() {
 
