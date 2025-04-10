@@ -28,7 +28,7 @@ An automated trading bot specifically designed for the Friend.Tech platform. Fea
 An ERC20 token contract with advanced features:
 - Automated market maker (AMM) integration with Uniswap V2
 - Dynamic fee system for buys and sells
-- Anti-bot and anti-dump mechanisms
+- Anti-bot mechanisms
 - Liquidity management
 - Tax collection and distribution
 - Trading limits and restrictions
@@ -45,7 +45,7 @@ An ERC1155 token contract for access control:
 - Configurable pricing
 
 ### 3. MassMinter.sol
-A contract for batch operations:
+A contract for batch operations bypassing wallet limits:
 - Worker contract deployment
 - Batch transaction execution
 - ERC20 token distribution
@@ -58,7 +58,7 @@ A contract for batch operations:
 A utility contract for executing transactions:
 - ERC721 and ERC1155 token receiver
 - ERC20 token transfers
-- Generic contract calls
+- Generic contract calls 
 - ETH management
 - Security controls
 - Transaction execution verification
@@ -101,8 +101,7 @@ npm install
 ## Usage
 
 ### Unchained Monitors
-1. Configure monitoring parameters in `userSettings.json`
-2. Start the monitoring system:
+1. Start the monitoring system:
 ```bash
 node index.js
 ```
@@ -114,23 +113,6 @@ node index.js
 ```bash
 node index.js
 ```
-
-## Security Considerations
-
-- Never share private keys or sensitive data
-- Use environment variables for sensitive information
-- Regularly update dependencies
-- Monitor for suspicious activities
-- Implement rate limiting
-- Use secure proxy connections
-
-## Contributing
-
-1. Fork the repository
-2. Create a feature branch
-3. Commit changes
-4. Push to the branch
-5. Create a Pull Request
 
 ## License
 
