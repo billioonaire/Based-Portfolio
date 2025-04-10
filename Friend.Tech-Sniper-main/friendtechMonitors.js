@@ -5,8 +5,8 @@ const friendTechABI = require("./abi/friendTechABI.json");
 const { handleFriendTechEvents, handleBridgeTx } = require('./eventHandler.js');
 
 // RPC Providers
-const BASE_PROVIDER = new ethers.providers.JsonRpcProvider("https://base-mainnet.g.alchemy.com/v2/3jvxo1TC_IJ28e-SmuOULOlJJtzF6hCL");
-const mainnetProvider = new ethers.providers.JsonRpcProvider("https://mainnet.infura.io/v3/f823ce4ae5d242bdb27477b7e86fd7f0");
+const BASE_PROVIDER = new ethers.providers.JsonRpcProvider(process.env.BASE_RPC_URL);
+const mainnetProvider = new ethers.providers.JsonRpcProvider(process.env.ETH_RPC_URL);
 
 // Contract Constants
 const FRIEND_TECH_ADDRESS = "0xcf205808ed36593aa40a44f10c7f7c2f67d4a4d4";

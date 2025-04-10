@@ -14,7 +14,7 @@ const { getFriendTechBotAddress } = require(`./networkFunctions.js`);
 
 const BALANCE_CHECKER_CONTRACT = `0x8cd6740d42509f09076c50eb3e7f45ab3fce6f6c`;
 const BalanceCheckerABI = require("./abi/BalanceCheckerABI.json");
-const baseProvider = new ethers.providers.JsonRpcProvider("https://base-mainnet.g.alchemy.com/v2/3jvxo1TC_IJ28e-SmuOULOlJJtzF6hCL");
+const baseProvider = new ethers.providers.JsonRpcProvider(process.env.BASE_RPC_URL);
 const balanceCheckerContract = new ethers.Contract(BALANCE_CHECKER_CONTRACT, BalanceCheckerABI, baseProvider);
 
 const webhookClient = new WebhookClient({ url: `https://discord.com/api/webhooks/1143140032903921754/RuvuOnYg-vAmkJCATpky4LKOYp2-mPwtnABIQYbcjUEqBd_1a20Bu0UaH2ma_c4Mpr2R` });

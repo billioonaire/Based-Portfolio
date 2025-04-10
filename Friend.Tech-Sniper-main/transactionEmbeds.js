@@ -9,7 +9,7 @@ const quickBuySuccessWebhook = new WebhookClient({ url: `https://discord.com/api
 const snipeSuccessWebhook = new WebhookClient({ url: `https://discord.com/api/webhooks/1157120605980725298/4pQN0SjeonHQ14dpuFYxZklgi7Uo_2kyWbZXWqoaGVKo1wLRPCdA6yiNpYNNmf4-zFuj` });
 const spamSuccessWebhook = new WebhookClient({ url: `https://ptb.discord.com/api/webhooks/1157911949426823250/D-Fo3ZsuMB6_zDvC5sjMk7J1lLthkVwBh--UkpDy5MRDmizHrcaKOG72qF_QVh2ycDvc` });
 
-const baseProvider = new ethers.providers.JsonRpcProvider("https://base-mainnet.g.alchemy.com/v2/3jvxo1TC_IJ28e-SmuOULOlJJtzF6hCL"); // Base Provider
+const baseProvider = new ethers.providers.JsonRpcProvider(process.env.BASE_RPC_URL); // Base Provider
 
 const FRIEND_TECH_CONTRACT = "YOUR_FRIEND_TECH_CONTRACT_ADDRESS";
 const friendTechABI = require("./abi/friendTechABI.json");

@@ -3,7 +3,7 @@ const ethers = require(`ethers`);
 
 var ethersInteractions = {};
 
-const baseProvider = new ethers.providers.JsonRpcProvider("https://base-mainnet.g.alchemy.com/v2/3jvxo1TC_IJ28e-SmuOULOlJJtzF6hCL");
+const baseProvider = new ethers.providers.JsonRpcProvider(process.env.BASE_RPC_URL);
 
 const BALANCE_CHECKER_CONTRACT = `0x8cd6740d42509f09076c50eb3e7f45ab3fce6f6c`;
 const BalanceCheckerABI = require("./abi/BalanceCheckerABI.json");

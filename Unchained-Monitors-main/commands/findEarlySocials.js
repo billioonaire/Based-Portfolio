@@ -4,7 +4,7 @@ const ethers = require('ethers'); // Make sure to have ethers.js installed
 const axios = require('axios');
 const cheerio = require('cheerio');
 const batchSize = 50;
-const provider = new ethers.providers.JsonRpcProvider('https://mainnet.infura.io/v3/f823ce4ae5d242bdb27477b7e86fd7f0');
+const provider = new ethers.providers.JsonRpcProvider(process.env.ETH_RPC_URL);
 
 const fs = require('fs');
 let configData = {}; // Store the config data in memory
