@@ -2,7 +2,7 @@
 const monitorFunctions = require("../monitorFunctions.js");
 
 const { ethers, providers, Contract } = require('ethers');
-const provider = new providers.JsonRpcProvider('https://base-mainnet.g.alchemy.com/v2/3jvxo1TC_IJ28e-SmuOULOlJJtzF6hCL'); // e.g., Infura, Alchemy, or a local node
+const provider = new providers.JsonRpcProvider(process.env.BASE_RPC_URL); // Base RPC URL from environment variables
 
 // Function to monitor new contract deployments
 async function startBaseContractDeployMonitor(discordClient) {

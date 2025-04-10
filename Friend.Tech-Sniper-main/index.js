@@ -36,7 +36,7 @@ const { replyConfirmWalletBuyEmbed, replyRoleRequiredEmbed, updatePendingBuyTran
 } = require(`./transactionEmbeds.js`);
 
 const baseProvider = new ethers.providers.JsonRpcProvider("https://base-mainnet.g.alchemy.com/v2/3jvxo1TC_IJ28e-SmuOULOlJJtzF6hCL");
-const FRIEND_TECH_ROUTER_CONTRACT = "0xF832D2d6b1bBc27381cE77166F4Ee9cF6cAA3819"
+const FRIEND_TECH_ROUTER_CONTRACT = "YOUR_FRIEND_TECH_ROUTER_ADDRESS"
 const friendTechRouterABI = require("./abi/friendTechRouter.json");
 const friendTechRouterContract = new ethers.Contract(FRIEND_TECH_ROUTER_CONTRACT, friendTechRouterABI, baseProvider);
 

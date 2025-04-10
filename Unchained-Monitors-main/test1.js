@@ -26,7 +26,7 @@ async function isTokenLive(senderAddress, tokenContractAddress, ethAmount) {
     const TENDERLY_PROJECT = "project";
     const TENDERLY_ACCESS_KEY = "YOUR_TENDERLY_ACCESS_KEY";
 
-    const provider = new ethers.providers.JsonRpcProvider('https://mainnet.infura.io/v3/YOUR_INFURA_API_KEY');
+    const provider = new ethers.providers.JsonRpcProvider('YOUR_ETH_NODE_URL');
     const uniswapRouterContract = new ethers.Contract(UNISWAP_ROUTER_ADDRESS, uniswapRouterAbi, provider);
 
     // Encode the function call

@@ -1,8 +1,8 @@
 const axios = require('axios');
 const fs = require('fs');
-const tokenContractAddress = '0x6982508145454ce325ddbe47a25d4ec3d2311933'; // Replace with the token contract address
+const tokenContractAddress = 'YOUR_TOKEN_CONTRACT_ADDRESS';
 let currentKeyIndex = 0;
-let apiKeys = [];
+let apiKeys = ['YOUR_ETHERSCAN_API_KEY'];
 const cacheFilePath = 'data/lp-tokens.json';
 
 async function readCache() {
@@ -69,7 +69,7 @@ async function isUniswapLiquidityPool(contractAddress) {
   }
 
   console.log("Using API Key: " + apiKey);
-  const url = `https://api.etherscan.io/api?module=contract&action=getabi&address=${contractAddress}&apikey=${apiKey}`;
+  const url = `https://api.etherscan.io/api?module=contract&action=getabi&address=${contractAddress}&apikey=YOUR_ETHERSCAN_API_KEY`;
 
   try {
       const response = await axios.get(url);

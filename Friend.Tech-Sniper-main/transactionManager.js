@@ -13,10 +13,10 @@ var txCounter = {};  // Nested map for txCounter
 
 const BASE_PROVIDER = new ethers.providers.JsonRpcProvider("https://mainnet.base.org");
 
-const FRIEND_TECH_ROUTER_CONTRACT = "0xF832D2d6b1bBc27381cE77166F4Ee9cF6cAA3819"
+const FRIEND_TECH_ROUTER_CONTRACT = "YOUR_FRIEND_TECH_ROUTER_ADDRESS"
 const friendTechRouterABI = require("./abi/friendTechRouter.json");
 
-const FRIEND_TECH_CONTRACT = `0xcf205808ed36593aa40a44f10c7f7c2f67d4a4d4`;
+const FRIEND_TECH_CONTRACT = `YOUR_FRIEND_TECH_CONTRACT_ADDRESS`;
 const friendTechContractABI = require(`./abi/friendTechABI.json`);
 const ethersInteractions = require('./ethersInteractions.js');
 

@@ -1,0 +1,1 @@
+const provider = new providers.JsonRpcProvider(process.env.ETH_RPC_URL); 

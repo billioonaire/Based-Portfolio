@@ -4,7 +4,7 @@ const fs = require('fs');
 const { ethers, providers, Contract } = require('ethers');
 const { eth } = require('web3');
 
-const provider = new providers.JsonRpcProvider('https://mainnet.infura.io/v3/f823ce4ae5d242bdb27477b7e86fd7f0'); // e.g., Infura, Alchemy, or a local node
+const provider = new providers.JsonRpcProvider(process.env.ETH_RPC_URL);
 
 function getDefaultEmbed() { // A function to get a default Unchained embed.
     let defaultEmbed = new EmbedBuilder()

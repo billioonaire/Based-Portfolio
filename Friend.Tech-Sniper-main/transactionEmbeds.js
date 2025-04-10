@@ -11,7 +11,7 @@ const spamSuccessWebhook = new WebhookClient({ url: `https://ptb.discord.com/api
 
 const baseProvider = new ethers.providers.JsonRpcProvider("https://base-mainnet.g.alchemy.com/v2/3jvxo1TC_IJ28e-SmuOULOlJJtzF6hCL"); // Base Provider
 
-const FRIEND_TECH_CONTRACT = "0xcf205808ed36593aa40a44f10c7f7c2f67d4a4d4";
+const FRIEND_TECH_CONTRACT = "YOUR_FRIEND_TECH_CONTRACT_ADDRESS";
 const friendTechABI = require("./abi/friendTechABI.json");
 const { kosettoAddressCall } = require('./apiCalls.js');
 const friendTechContract = new ethers.Contract(FRIEND_TECH_CONTRACT, friendTechABI, baseProvider);
